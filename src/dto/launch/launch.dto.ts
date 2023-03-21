@@ -1,11 +1,13 @@
 import { LaunchLinkDto } from './launch-link.dto';
 
 export interface LaunchDto {
-  links?: LaunchLinkDto;
-  success: null | boolean;
-  details: null | string;
+  id: string;
   flight_number: number;
+  name: string;
+  details: null | string;
   date_utc: Date;
   date_unix: number;
-  id: string;
+  upcoming: boolean;
+  success: null | boolean;
+  links?: LaunchLinkDto;
 }

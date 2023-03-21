@@ -5,7 +5,7 @@ import {
   Query,
   UseInterceptors,
 } from '@nestjs/common';
-import { GetDashboardLaunchesOutput } from 'src/dto/launch/get-dashboard-launches.output';
+import { GetNextAndLatestLaunchesOutput } from 'src/dto/launch/get-dashboard-launches.output';
 import { LaunchDto } from 'src/dto/launch/launch.dto';
 import { PaginatedOutput } from 'src/dto/paginated.output';
 import { FormatResponseInterceptor } from 'src/format-response/interceptors/format-response.interceptor';
@@ -41,8 +41,8 @@ export class SpacexApiController {
     return this.apiService.getPastLaunches(page);
   }
 
-  @Get('launches/dashboard')
-  async getDashboardLaunches(): Promise<GetDashboardLaunchesOutput> {
+  @Get('launches/next_and_latest')
+  async getNextAndLatestLaunches(): Promise<GetNextAndLatestLaunchesOutput> {
     const data = await Promise.all([
       this.apiService.getNextLaunch(),
       this.apiService.getLatestLaunch(),

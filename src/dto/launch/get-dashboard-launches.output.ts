@@ -1,6 +1,6 @@
 import { LaunchDto } from './launch.dto';
 
-export interface GetDashboardLaunchesOutput {
+export interface GetNextAndLatestLaunchesOutput {
   next: LaunchDto;
   latest: LaunchDto;
 }
