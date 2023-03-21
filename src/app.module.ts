@@ -3,6 +3,7 @@ import { SpacexAPIModule } from './spacex-api/spacex-api.module';
 import { CacheInterceptor, CacheModule, Module } from '@nestjs/common';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ConfigModule } from '@nestjs/config';
+import { FormatResponseInterceptor } from './format-response/interceptors/format-response.interceptor';
 
 @Module({
   imports: [
@@ -25,6 +26,10 @@ import { ConfigModule } from '@nestjs/config';
     {
       provide: APP_INTERCEPTOR,
       useClass: CacheInterceptor,
+    },
+    {
+      provide: APP_INTERCEPTOR,
+      useClass: FormatResponseInterceptor,
     },
   ],
 })
