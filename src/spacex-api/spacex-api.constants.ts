@@ -7,4 +7,6 @@ export const SPACEX_API_QUERY_SELECT = {
   details: true,
   date_utc: true,
   date_unix: true,
+  name: true,
+  upcoming: true,
 };
