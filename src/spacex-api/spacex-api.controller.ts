@@ -8,12 +8,10 @@ import {
 import { GetNextAndLatestLaunchesOutput } from 'src/dto/launch/get-dashboard-launches.output';
 import { LaunchDto } from 'src/dto/launch/launch.dto';
 import { PaginatedOutput } from 'src/dto/paginated.output';
-import { FormatResponseInterceptor } from 'src/format-response/interceptors/format-response.interceptor';
 import { SpacexAPIService } from './spacex-api.service';
 
 @Controller('spacex-api')
 @UseInterceptors(CacheInterceptor)
-@UseInterceptors(FormatResponseInterceptor)
 export class SpacexApiController {
   constructor(private readonly apiService: SpacexAPIService) {}
 
